@@ -1,0 +1,5 @@
+id,Model,filename,Accracy
+1,KNN,knn_model.pkl,98.81
+2,SVC poly,SVC_poly_model.pkl,99
+3,Random Forest,RandomForest_model.pkl,98
+4,Light GBM,lgb_model.pkl,99

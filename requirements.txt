@@ -1,0 +1,11 @@
+streamlit
+scikit-learn
+pandas
+numpy
+plotly
+seaborn
+matplotlib
+scipy
+nltk
+warnings
+pickle-mixin
