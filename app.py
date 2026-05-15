@@ -134,7 +134,7 @@ MFCCs_5 = st.sidebar.slider(
     step=0.000001,
     format="%f"
 )
-MDCCs_6 = st.sidebar.slider(
+MFCCs_6 = st.sidebar.slider(
     label="MFCCs_6",
     min_value=-0.410416976545143,
     max_value=1.000000,
@@ -307,14 +307,13 @@ st.sidebar.info(f"**Filtered models:** {len(filtered_models)} / {len(models)}")
 #speech_vector = vectorizer.fit_transform([speech])
 if st.button("Predict"):
     #print('good')
-    Required_MFCCs = [MFCCs_1, MFCCs_2, MFCCs_3, MFCCs_4, MFCCs_5, MDCCs_6, MFCCs_7, MFCCs_8, MFCCs_9, MFCCs_10, MFCCs_11, MFCCs_12, MFCCs_13, MFCCs_14, MFCCs_15, MFCCs_16, MFCCs_17, MFCCs_18, MFCCs_19, MFCCs_20, MFCCs_21, MFCCs_22]
+    Required_MFCCs = [MFCCs_1, MFCCs_2, MFCCs_3, MFCCs_4, MFCCs_5, MFCCs_6, MFCCs_7, MFCCs_8, MFCCs_9, MFCCs_10, MFCCs_11, MFCCs_12, MFCCs_13, MFCCs_14, MFCCs_15, MFCCs_16, MFCCs_17, MFCCs_18, MFCCs_19, MFCCs_20, MFCCs_21, MFCCs_22]
     input_data = np.array(Required_MFCCs).reshape(1, -1)
     for model_id in loop:
         st.write(f"Model: {model_id} - {filtered_models[filtered_models['id'] == model_id]['Model'].values[0]}")
         match model_id:
             case 1:
                 filename = filtered_models['filename'].loc[filtered_models['id'] == model_id].values[0]
-                st.write(f"Loading model from: {filename}")
                 with open("knn_model.pkl", "rb") as f:
                     model = pickle.load(f)  # 'bundle' is the model, so load it directly into 'model'
 
